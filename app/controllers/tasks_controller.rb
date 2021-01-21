@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :require_user_logged_in, :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
   
   def index
     # @tasks = Task.all
@@ -25,8 +25,8 @@ class TasksController < ApplicationController
     else
       @tasks = current_user.tasks.all
       flash.now[:danger] = 'タスクの投稿に失敗しました。'
-      # render 'tasks/index'
-      render root_url
+      render 'tasks/index'
+      # render root_url
     end
   end
 
