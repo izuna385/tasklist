@@ -1,11 +1,12 @@
 
 <div class="row">
   <aside class="col-sm-4">
-    <%= form_with(model: @task, local: true) do |f| %>
-      <div class="form-group">
-        <%= render 'form', task: @task %>
-      </div>
-    <% end %>
+    <!--<%= form_with(model: @task, local: true) do |f| %>-->
+    <!--  <div class="form-group">-->
+    <!--    <%= render 'form', task: @task %>-->
+    <!--  </div>-->
+    <!--<% end %>-->
+    <%= link_to 'タスク新規作成', new_task_path %>
   </aside>
   <div class="col-sm-8">
     <%= render 'tasks/tasks', tasks: @tasks %>
