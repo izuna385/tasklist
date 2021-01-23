@@ -22,8 +22,7 @@ class TasksController < ApplicationController
     else
       @tasks = current_user.tasks.all
       flash.now[:danger] = 'タスクの投稿に失敗しました。'
-      render 'tasks/index'
-      # render root_url
+      render :new
     end
   end
 
