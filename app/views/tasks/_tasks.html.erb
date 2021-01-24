@@ -1,20 +1,18 @@
 <ul class="list-unstyled">
   <% tasks.each do |task| %>
-    <% if current_user == task.user %>
-      <li class="media mb-3">
-        <div class="media-body">
-          <div>
-             <span class="text-muted">posted at <%= task.created_at %></span>
-          </div>
-          <div>
-            <p><%= task.content %></p>
-            <p><%= task.status %></p>
-          </div>
-          <div>
-            <%= link_to "Details",task %>
-          </div>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div>
+           <span class="text-muted">posted at <%= task.created_at %></span>
         </div>
-      </li>
-    <% end %>
+        <div>
+          <p><%= task.content %></p>
+          <p><%= task.status %></p>
+        </div>
+        <div>
+          <%= link_to "Details",task %>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>
